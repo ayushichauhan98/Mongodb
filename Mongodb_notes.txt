@@ -1,0 +1,1643 @@
+Welcome to mongodb session
+****************************
+1. milk => single product 
+					1. paneer
+					2. curd
+					3. butter
+					4. cheese
+					5. gee
+					6. nenu 
+similarly,
+1. mongo => product
+			1. Atlas : free 1GB, remote connection, for mongodb
+			local to server connection, mongodb use.
+	
+		2. Server 
+			1. community server : free and open source server for local.
+			2. Professional server : paid and cloud server/local server
+			3. Enterprise server : paid and cloud server/local server.
+			
+			3. Compass : client for running Queries when connected to server, all database operation can be performed
+			using compass 
+			it is GUI Based with mongoshell inbuilt.
+			
+			4. Cluster : cloud paid => hosted on cloud server
+				
+				1. aws : open source : amazon.
+				2. azure : closed source : microsoft.
+				3. gcp : google cloud plateform
+				4. IBM Cloud
+                5. Oracle Cloud
+
+				
+			5. DB CLI Tools : Import & export, of database,backups.
+			6. mongodb shell :
+			
+			client for running Queries when connected to server, all database operation can be performed
+			using compass 
+			it is CLI Based with mongoshell inbuilt.
+			
+1. Mongodb : server On
+2. mongodb : client 
+
+client ---------> Query/functions --------> Server (Database) 		
+will be	
+accessed 
+using client							Data will be stored 
+											in server
+	client : to Run Queries, insert,delete,update,select...operation on
+    server.	
+     1. GUI tool : compass.
+	 2. cli tool : mongoshell.
+	 
+Date : 26/11/2022
+*******************
+Basic Information of Mongodb
+1. Database  will be stored in, Server. 
+2. Queries will be formed from client.
+3. mongodb is not only a database but a organisation which also with,
+mulitple cloud based software.
+4. mongodb named is derived from latin meaning hu[mongo]us.
+humongus means very very huge and large.
+5. mongodb can store up to 10^3 to 10^6 billions Gb of records, and also
+its size will depend on machine or server Architecture you are using.
+
+[size of mongodb] is direclty proportional [Server/Machine Architecture.]
+ Eg :-
+ 12 bit/Bytes                                    32 Bit 
+ 24 Bit                                          64 Bit
+ 
+ How to set up mongo server
+ ****************************
+ 1. goto c or your drive:/program files/mongodb/server/bin
+     1. mongod : mongo driver => mongod is a driver for server.
+	 2. mongos : mongo shell 
+	 3. mongo : mongo by defaut client
+	 4. mongo.cnf(or cfg or config or .deb) : configuration file
+	 
+	 what is mongo.cnf
+	 *******************
+	 All settings, and configuration like port,archiecture,security
+	 every setting is save inside this file.
+
+  1. Running instance of mongodb server
+**********************************************
+make sure you have path set to the environment vairable.
+you have created server and client
+Client will till server is running.
+server stopped client stopped.
+
+Example :-
+
+server will have its own instance 
+and client will have its own instance.
+
+Run cmd:-
+***********
+windows + R => type cmd => Hit Enter.
+Now listen to me very carefully, opening your ears
+ 1. desktop has two position.
+ 2  cd onedrive/desktop or cd desktop
+
+How to launch server
+*********************
+open cmd or powershell
+start mongo-server.bat
+ 
+How to launch server
+*********************	 
+start mongo-client.bat 
+
+Note, By default in mongodb there is a by: defaultStoragePath for server.
+
+defaultStoragePath = c://data/db
+Entire data will stored inside this folder only,
+if this folder not is not created your server will shutdown always
+hence you need to create, this folder or path and then only 
+you server will run.
+
+How to create storage Db folder 
+********************************
+1. goto C drive> make data folder > make db folder Inside data folder.
+
+Basic of JSON
+**************
+JSON is not a technology, Rather it is a form of data representation
+for example:-
+Rdbms: in form of tables
+in html data is representation in form tags
+in xml data is represented in form, tags
+
+SGML: standard general markup langauge
+SGML has two childs, 
+		1. for data presentation :
+		2. for data storage.
+
+      Meaning of data representation:-
+	  ********************************
+	  data will be represent in full look and feel.
+	  hence html uses css for complete look and feel of the webpages
+	  1. html 
+	  2. css 
+	  3. js (DHTML)
+	  
+	  Meaning of data storage:-
+	  ************************
+      data will stored in such a way that it transported/transfered from
+	  one to another place
+	  1. xml
+	  2. JSON
+	  3. yml
+	 
+Student Table:-
+****************
+
++-------------------------------------------+
+| 	id 	|	name	|	class  |	marks	|
++-------------------------------------------+
+|  1001 | ravi      | 12th 	   |  80		|
+|  1002 | chhavi    | 12th     |  90        |                                         
+|  1003 | kavi      | 10th     |  70        |                                        
+|  1004 | kivi      | 11th     |  50        |                                                
+|  1005 | shivi     | 10th     |  90        | |---------------------------------------------                                                                
+Xml Data stored :-
+***********************
+<?xml Encoding="utf-8" version="1.x" ?>
+<xml>
+<student>
+	<id>1001</id>
+	<name>ravi</name>
+	<class>12th</class>
+	<marks>80</marks>
+</student>
+<student>
+	<id>1002</id>
+	<name>chhavi</name>
+	<class>12th</class>
+	<marks>90</marks>
+</student>
+<student>
+	<id>1001</id>
+	<name>kavi</name>
+	<class>10th</class>
+	<marks>70</marks>
+</student>
+...
+</xml>
+JSON : Javascript Object Notation
+***********
+Record 1
+
+var id1 = 1001;
+var name1 = "ravi";
+var class1 = "12th";
+var marks1 = 80;
+
+Object-1 => Mongodb => document
+{
+ id:1001,
+ name:"ravi",
+ class:"12th",
+ marks:80
+}
+
+Record 2
+var id2 = 1002;
+var name2 = "chhavi";
+var class2 = "12th";
+var marks2 = 90;
+
+Object-2 
+{
+ id : 1002,
+ name : "chhavi",
+ class : "12th",
+ marks:90
+}
+
+Record 3
+var id3 = 1003;
+var name3 = "kavi";
+var class3 = "10th";
+var marks3 = 70;
+
+Object-3
+{
+ id : 1003,
+ name : "kavi",
+ class : "10th",
+ marks:70
+}
+...
+...
+...
+var std_arr = 
+[
+ {
+ id:1001,
+ name:"ravi",
+ class:"12th",
+ marks:80
+}, ---------------------> 0
+{
+ id : 1002,
+ name : "chhavi",
+ class : "12th",
+ marks:90
+},----------------------> 1
+{
+ id : 1003,
+ name : "kavi",
+ class : "10th",
+ marks:70
+}, ---------------------> 2
+...
+....
+...
+]
+
+std_arr[2].name
+std_arr[2].id
+std_arr[2].class
+std_arr[2].marks
+
+for(){
+	std_arr[i].name;
+}
+
+Array Of Object : data in form of object placed inside array is called as
+Array of Object
+*******************
+mongodb => array => Collection
+object => document
+column => key
+value => value
+
+Comparison B/w SQL and mongodb:-
+*******************************
+1. SQL : table 
+   mongodb : collection or Array or Array of values or Array of Object.
+                Array of values => ["math","pysics","chemistry"]
+				Array of Object => [{name:"ravi",class:"12th",marks:90},{},{},{},{},]
+2. SQL : database 
+   mongodb : database
+3. SQL : columns
+   mongodb : key
+4. SQL : values 
+   mongo : values
+5. SQL => 1 Record or 1 Row or 1 Tuple 
+   mongodb => Object or Document => index 
+6. SQL => = 
+   Mongodb => :
+7. SQL => Operator or clause 
+   mongodb => $keywords => it will be always => key 
+   Syntax 
+   {$keyword:value}
+   Eg:- 
+   = => :
+   != : $ne
+   >  : $gt
+   <  : $lt
+   >= : $gte
+   <= : $lte
+   
+   SQL => and & or 
+   mongodb => $and & $or
+   
+   Memory Allocation of Mongodb
+   **********************************
+   1. secondary memory => internal db or static db => ROM
+   2. primary memory => External Db or dynamic db or runtime db => Ram 
+   by storage.dbPath => c:/data/db 
+							  | 
+							  primary memory
+							  >db 
+							  test
+							  
+   
+   How to initialise/ Run the mongodb server
+   ******************************************
+   1. make sure c:/data/db folder exist if not the make it
+   using command
+   $ cd c/ hit enter
+   $ mkdir data enter
+   $ cd data 
+   $ mkdir db
+   $ cd db => empty folder
+   $ ls -lart => ./ or ../
+   
+   or
+   $ ls -lart => if you have some BSON files of mongodb then 
+   you may be using older mongodb or it is already made by server.
+   Bson => Binary Json.
+   Note :: Mongodb stores the data in BSON.
+   
+How to list of All databases
+************************************
+> show databases
+admin 0.00 GB
+config 0.00 GB
+local 0.00 GB
+  
+Or
+> show dbs
+in mongodb ; is not mendatory, 
+you can add or not.
+
+show databases; valid
+or 
+show databases
+
+How to see current database or database at primary memory
+********************************************************
+>db
+Note :: by default test database will be there.
+Why test db is not a part of internal base?
+because test db donot contain any collection it is for user use only.
+hence, it is only for the testing purpose like running queries.
+hence it is not a part of, internal database.
+
+But, you can make test db as part of internal database.
+by creating minimum one collection.
+
+Note :: One db must have one collection for permanent storage other wise
+it will be temporary storage.
+
+Important Query statement in mongodb
+****************************************
+1. Query: it same as SQL, written in lower case with or without semicolon.
+in terms of, space sperated statement.
+
+>show databases 
+>show collections : No of tables(collections) in a primary database.
+
+   seperation space 
+2. procedures/functions/methods
+    Syntax standard : Pure Js wala syntax.
+    
+   db.collection.method(), also it follows camelCase standard.
+   db.getCollectionNames() : No of tables(collections) in a primary database.
+  separation is done using .
+  
+  >db.getCollectionNames()
+  or
+  >show collections
+  > In SQL : Show tables;
+  
+How to create a database :-
+*****************************
+SQL : database 
+mongodb : database
+There are No changes at database level.
+
+SQL : show databases;
+mongodb : show databases
+But there is lot of change at table level.
+SQL : show tables;
+mongodb : show collections
+
+database Concept:- we know that, mongodb has internal database which uses,
+secondary memory and current database is used at primary memory.
+so, what ever database you are going to create, will be allocated primary memory.
+
+we use, use statament to create the database  and directly switch to it.
+1. if database exist, it will be selected.
+2. if database does not exist, it will be created and will be selected it.
+
+How to verify selected database
+*********************************
+selected database => current scope of database
+> db
+
+Example:-
+> show databases
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use college #not created but created and selected
+switched to db college
+> db # to, check current scope of database.
+college
+> use local  # to select existing database.
+
+switched to db local.
+>
+
+Note :- mongodb is version specific, its Query to database may change.
+
+How to check version of Runtime.
+************************************
+> db.version()
+
+How to create table(collection) in selected database
+******************************************************
+> as SQL we have table and tables are created on, database.
+> in mongodb we have collection, collection is created on database.
+
+> use database
+switched to database db.
+> db
+> db.createCollection("student");
+{ok:1} => output => key and value.
+
+How to, check Created collections
+********************************
+> db
+> show collections
+  student #inform of list 
+  or 
+> db.getCollectionNames()
+   ["student"] => Arrayofvalues
+		index => 0
+   
+Example:-
+> use college
+switched to db college
+> db
+college
+> db.createCollection("student");
+{ "ok" : 1 }
+> show collections
+student
+> db.getCollectionNames()
+[ "student" ]
+> db.createCollection("teacher");
+{ "ok" : 1 }
+> show collections
+student
+teacher
+> db.getCollectionNames()
+[ "student", "teacher" ]
+> db.getCollectionNames()[0]
+student
+> db.getCollectionNames()[1]
+teacher
+>
+How many collection are existed in database
+**********************************************
+> db.getCollectionNames().length
+> How to use nested Query or sub Queries in mongodb
+***************************************************
+
+> db.getCollectionNames().length
+2
+first collection : db.getCollectionNames()[0]
+last collection: db.getCollectionNames().length => length of array.
+db.getCollectionNames().length-1 => length of array -1 => last element or 
+last collection.
+db.getCollectionNames()[n-1]
+n=> length of collection => db.getCollectionNames().length
+db.getCollectionNames()[db.getCollectionNames().length-1] => nested procedure.
+
+
+For Example:-
+ravi 3000
+ram 2000
+ramdin 2000
+shyam 1000
+select max(salary) from emp => 3000
+
+select max(salary) from emp where salary < (select max(salary) from emp where salary < (select max(salary) from emp))
+
+db.getCollectionNames()[db.getCollectionNames().length-1]
+
+db.getCollectionNames()[2-1]
+db.getCollectionNames()[1]
+["student","teacher"]
+
+Trick : Nth max < where Nthmax - 1 ... 
+
+Inserting Record in collection(table)
+***************************************
+1. single insert : 1 Record at a time insertion.
+	Data pass object 
+	{name:"awnish",roll:1001,class:"12th"}
+2. Bulk insert : Mutliple Record at a time.
+   As a array of Object.
+   [{},{},{},{},{}.....n]
+   
+   Example:-
+   [
+	{name:"ravi",roll:1001,class:"12th",marks:80},
+	{name:"raman",roll:1002,class:"12th",marks:70},
+	{name:"ram",roll:1003,class:"10th",marks:90},
+	{name:"shyam",roll:1004,class:"10th",100},
+   ]
+   In order to insert the Record:-
+   SQL : insert into student(roll,name,class) values('1001','ravi','12th')
+   Single :- 
+   db.student.insert({
+	roll:1001,
+	name:"ravan",
+	class:"12th",
+	marks:50
+   })
+   
+   Output:-
+   
+   {
+	write:1
+   }
+   Bulk:-
+   db.student.insert([
+	{name:"ravi",roll:1002,class:"12th",marks:80},
+	{name:"raman",roll:1003,class:"12th",marks:70},
+	{name:"ram",roll:1004,class:"10th",marks:90},
+	{name:"shyam",roll:1005,class:"10th",marks:100}
+   ])
+   
+    Output:-
+   {
+    nInsertedRecord:4
+   }
+  
+   How to select or see the records in mongodb
+   *******************************************
+   SQL : select * from student;
+   
+	db.collection.find()
+	Eg:-
+	db.student.find()
+	or db.collection.find().projection()
+	
+	If you want data in pretty mode 
+	***********************************
+	db.student.find().pretty()
+	
+	what is difference B/w pretty() and projection()
+	*******************************************************
+	pretty() : it show data in vertical view.
+	projection : it show data in horizontal view.
+	
+	db.student.find()
+	or 
+	db.student.find().projection()
+	or
+	db.student.find({})
+	                 |
+					 filter or conditon or where clause.
+					 
+	db.student.find({}).pretty() and db.student.find({}).projection() and db.student.find()
+	
+	db.student.find({}).pretty(): All Record vertically
+	db.student.find({}).projection() : All Record Horizontally
+    db.student.find() : All Record Horizontally.
+	
+	How to include or exclude the columns in Mongodb
+	***************************************************
+	or
+	How to select Record from perticular columns
+	***********************************************
+	mongodb by default contains a switch 
+	switch on => 1 => show
+	off => 0 => hide
+	
+	db.student.find() => select * from student;
+	All Columns are on.
+	
+	Eg:-
+	select * from student;
+	select roll,id,name,class,marks from student;
+	db.student.find({},{})
+	db.student.find({},{},{},{},{},....n); => No Error.
+	
+	db.student.find({},{})
+	                 |  |columes be be selected
+					 where
+	
+	
+	select name,class from student
+	Syntax:-
+	db.student.find({conditions},{selected column if show 1 and hide 0})
+	Note :: in procedure what ever you pass
+	it will either argument, object, array of object.
+	
+	db.collection.insert({}) => object
+	db.collection.insert([{},{},{}]) => array of Object
+	db.collection.find({}) => object
+	
+	> db.createCollection("student") => "student" => string type => argument.
+	> db.collection.find().limit(2) => 2 is Number type => argument.
+	
+	VVIP
+	****
+	Inclusion and Exclusion Query Error
+	******************************************
+	1.  db.collection.find({},{roll:0,name:1})
+	or
+	db.collection.find({},{name:1})
+	0 => exclude
+	1 => include 
+	
+	"Cannot do inclusion on field name in exclusion projection".
+	
+	
+	Note :: mongodb will never give error, for mismatch column name
+	but if logically or syntactical error is made the it will show error
+	
+	Eg:-
+> db.student.find({},{id:1}) => id => column => No.
+
+{ "_id" : ObjectId("638c6f8103c3868de3eef4e1") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e3") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e4") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e5") }
+
+Note :: perticular column, + _id => Output.
+
+
+> db.student.find({},{_id:0}) => it will hide id and Other columns will
+be displayed
+
+> db.student.find({},{_id:0,name:1})
+{ "name" : "ravan" }
+{ "name" : "ravi" }
+{ "name" : "raman" }
+{ "name" : "ram" }
+{ "name" : "shyam" }
+> db.student.find({},{_id:1,name:1})
+{ "_id" : ObjectId("638c6f8103c3868de3eef4e1"), "name" : "ravan" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2"), "name" : "ravi" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e3"), "name" : "raman" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e4"), "name" : "ram" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e5"), "name" : "shyam" }
+> db.student.find({},{name:1})
+{ "_id" : ObjectId("638c6f8103c3868de3eef4e1"), "name" : "ravan" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2"), "name" : "ravi" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e3"), "name" : "raman" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e4"), "name" : "ram" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e5"), "name" : "shyam" }
+> db.student.find({},{id:0,name:1})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Cannot do inclusion on field name in exclusion projection",
+        "code" : 31253,
+        "codeName" : "Location31253"
+}
+> db.student.find({},{id:0})
+{ "_id" : ObjectId("638c6f8103c3868de3eef4e1"), "roll" : 1001, "name" : "ravan", "class" : "12th", "marks" : 50 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2"), "name" : "ravi", "roll" : 1002, "class" : "12th", "marks" : 80 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e3"), "name" : "raman", "roll" : 1003, "class" : "12th", "marks" : 70 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e4"), "name" : "ram", "roll" : 1004, "class" : "10th", "marks" : 90 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e5"), "name" : "shyam", "roll" : 1005, "class" : "10th", "marks" : 100 }
+> db.student.find({},{id:1})
+{ "_id" : ObjectId("638c6f8103c3868de3eef4e1") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e3") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e4") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e5") }
+> db.student.find({},{id:1}
+... ]
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):2:0
+> db.student.find({},{_id:0})
+{ "roll" : 1001, "name" : "ravan", "class" : "12th", "marks" : 50 }
+{ "name" : "ravi", "roll" : 1002, "class" : "12th", "marks" : 80 }
+{ "name" : "raman", "roll" : 1003, "class" : "12th", "marks" : 70 }
+{ "name" : "ram", "roll" : 1004, "class" : "10th", "marks" : 90 }
+{ "name" : "shyam", "roll" : 1005, "class" : "10th", "marks" : 100 }
+> db.student.find({},{name:1})
+{ "_id" : ObjectId("638c6f8103c3868de3eef4e1"), "name" : "ravan" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2"), "name" : "ravi" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e3"), "name" : "raman" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e4"), "name" : "ram" }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e5"), "name" : "shyam" }
+> db.student.find({},{name:1,class:0,marks:0,roll:0})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Cannot do exclusion on field class in inclusion projection",
+        "code" : 31254,
+        "codeName" : "Location31254"
+}
+> db.student.find({},{name:1,class:1,roll:1,marks:1})
+{ "_id" : ObjectId("638c6f8103c3868de3eef4e1"), "roll" : 1001, "name" : "ravan", "class" : "12th", "marks" : 50 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2"), "name" : "ravi", "roll" : 1002, "class" : "12th", "marks" : 80 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e3"), "name" : "raman", "roll" : 1003, "class" : "12th", "marks" : 70 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e4"), "name" : "ram", "roll" : 1004, "class" : "10th", "marks" : 90 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e5"), "name" : "shyam", "roll" : 1005, "class" : "10th", "marks" : 100 }
+> db.student.find({},{name:1,class:1,roll:1,marks:1,_id:0})
+{ "roll" : 1001, "name" : "ravan", "class" : "12th", "marks" : 50 }
+{ "name" : "ravi", "roll" : 1002, "class" : "12th", "marks" : 80 }
+{ "name" : "raman", "roll" : 1003, "class" : "12th", "marks" : 70 }
+{ "name" : "ram", "roll" : 1004, "class" : "10th", "marks" : 90 }
+{ "name" : "shyam", "roll" : 1005, "class" : "10th", "marks" : 100 }
+> db.student.find({},{name:0,class:0,marks:0,roll:0,_id:0})
+{  }
+{  }
+{  }
+{  }
+{  }
+> db.student.find({},{name:0,class:0,marks:0,roll:0})
+{ "_id" : ObjectId("638c6f8103c3868de3eef4e1") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e3") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e4") }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e5") }
+>
+
+How to see total memory consumed by mongodb in collection
+*********************************************************
+> db.student.totalSize() => Total No of Bytes Reserved in primary Memory.
+
+How to count total no of Rows in Tables(collection) in database
+***************************************************************
+SQL :
+select * from student; => Record
+select count(*) from student; => Number
+
+Mongodb:-
+db.student.find() => Record
+db.student.find().count() => Number
+
+> db.student.find()
+> db.student.find().count()
+5
+
+How to use condition or where clause in mongodb
+*************************************************
+
+SQL :- select * from student where roll = '1002'
+                                     |
+									 {key:1002}
+									 
+      db.student.find() 
+	  
+	  Standard Functions
+	  ***********************
+	  
+	  db.collection.find({},{})
+	  db.collection.find({key:1002},{})
+	  or 
+	  db.collection.find({key:1002})
+	   
+How to merge columns in where clause in mongodb
+***********************************************
+> db.student.find({roll:1003},{name:1,class:1}).pretty()
+{
+        "_id" : ObjectId("638c6fb903c3868de3eef4e3"),
+        "name" : "raman",
+        "class" : "12th"
+}
+Using Operator in mongodb
+****************************
+SQL : select * from student where roll != 1002 => 
+                                        |
+										Operator
+																				
+sql operator is keyword in mongodb
+keyword starting $
+operator in sql => $keyword in mongodb
+{roll:{$ne:1002}}
+									
+	select * from student where roll = 1002				
+    {roll:{$ne:1002}}	
+
+	Syntax:-
+	
+	db.collection.find({columname:{$keyword:value}})
+	
+	!=  => $ne
+	> => $gt
+	< => $lt
+	>= => $gte
+	<= => $lte
+	
+orderby in mongodb :-
+**************************
+SQL => Select * from student order by roll asc or desc
+mongodb :- 
+
+Select * from student order by roll asc
+or 
+Select * from student order by roll desc
+asc => 1
+desc => -1
+
+roll:asc or 1
+or
+roll:desc or -1
+In mongodb
+**************
+{roll:1}
+{roll:-1}
+
+db.student.find().sort({key:-1 or 1})
+0 is Error
+By default, sorting will take place as per ObjectId()
+
+Limit with Offset in mongodb (or skipping the Record )
+****************************************************
+SQL : select * from table limit n; (limit)
+n is limit.
+
+SQL : (limit, with Offset)
+select * from table limit n,m
+n is limit.
+and m is offset.
+
+Note ::, mongodb also follow the order, in which SQL
+executes the Query.
+Order of execution SQL or MySql query Or Logical order of operations:
+FROM, including JOINs
+WHERE
+GROUP BY
+HAVING
+WINDOW functions
+SELECT
+DISTINCT
+UNION
+ORDER BY
+LIMIT and OFFSET
+
+offset : meaning skipping the record
+select * from student
+db.student.find().limit(n)
+
+or 
+offset or skipping
+db.student.find().limit(n).skip(m)
+n and m are number argument.
+
+or
+db.student.find().limit(end).skip(start)
+Example:-
+> db.student.find({marks:{$gt:50}}).count()
+4
+> db.student.find({marks:{$gt:50}})
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2"), "name" : "ravi", "roll" : 1002, "class" : "12th", "marks" : 80 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e3"), "name" : "raman", "roll" : 1003, "class" : "12th", "marks" : 70 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e4"), "name" : "ram", "roll" : 1004, "class" : "10th", "marks" : 90 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e5"), "name" : "shyam", "roll" : 1005, "class" : "10th", "marks" : 100 }
+> db.student.find({marks:{$gt:50}}).limit(2)
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2"), "name" : "ravi", "roll" : 1002, "class" : "12th", "marks" : 80 }
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e3"), "name" : "raman", "roll" : 1003, "class" : "12th", "marks" : 70 }
+> db.student.find({marks:{$gt:50}}).limit(1).skip(3)
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e5"), "name" : "shyam", "roll" : 1005, "class" : "10th", "marks" : 100 }
+> db.student.find({marks:{$gt:50}}).limit(1)
+{ "_id" : ObjectId("638c6fb903c3868de3eef4e2"), "name" : "ravi", "roll" : 1002, "class" : "12th", "marks" : 80 }
+
+Note :: Total Record Count always remains constant.
+> db.student.find({marks:{$gt:50}}).limit(1).count()
+4
+>
+Note count will change as per, condition or filter, not by limit or skip
+where Query is running such a way, that it picks Random record where ever it satifies the condition or where ever condition matches.
+
+Limit => display the no of record out of total filtered record.
+skip => to skip and display the no of record out of total filtered record.
+
+1st Highest marks.
+db.student.find().sort({marks:-1}).limit(1)
+2nd Highest marks
+db.student.find().sort({marks:-1}).limit(1).skip(1)
+Formula
+mth highest
+db.student.find().sort({marks:-1}).limit(1).skip(mth highest-1)
+
+where n is |n| => n is mod of n
+limit(-1) => |-1| => 1 limit(1)
+where m in skip cannot be negative >=0
+
+What is Regex(Regular Expression)
+***********************************
+Regular Expression : is a sequence of character set, which is used
+to recognise to match parttern.
+
+var mobile = "8299502081"; //string
+
+if(typeof(Number(mobile))=="number"){
+
+	if(mobile.length ==10){
+			if(mobile[0]=='6' || mobile[0]=='7'|| mobile[0]=='8' || mobile[0]=='9' ){
+				console.log("Valid Mobile Number");
+			}else{
+				console.log("Invalid Format of Mobile Number 1");
+			}
+	}else{
+		console.log("Invalid Format of Mobile Number 2");
+	}
+
+}else{
+     console.log("Invalid Format of Mobile Number 3");
+}
+
+1. password min 5 max 10
+2. at least one lower case
+3. at least one upper case 
+4. at least one @,# _
+5. at least number 0-9
+
+
+/^[a-zA-Z0-9@#_]{5,10}$/g
+
+Using Like Operator in mongodb
+*********************************
+Like operator in SQL is used to perform pattern matching.
+for eg : sql any record whose name contains "s" character.
+like => _ and % (wild card characters)
+There are 3 wild card character in SQL
+1. * => All Record
+2. % => match all 
+3. _ => match this digit.
+All these are part of regex.
+
+wild card character in SQL : those character which have special meaning in SQL.
+
+hence as we have like operator in SQL same as In, mongodb we have $regex keyword.
+if you know how to write regex(regular expression for a rollno,username,password,email,....) then  you can direclty use regex expression
+to find search record on the basis of pattern using $regex.
+
+syntax:-
+db.collection.find({name:{$regex:"a"}})
+								|
+								|
+								"" => regex pattern.
+								
+Note :: Learning Regex pattern will be helpful
+mysql, mongodb, front-end validation Js, form validation, Server Validation
+Server Restrict Rules.
+Eg :-  .htaccess
+        Regex => index.php => Regex pattern => .php extension => .jsp
+		
+How to find Unique Record :-
+*****************************
+we have to _id to find, unique data or record.
+we have used ObjectId or _id
+> db.student.find({_id: ObjectId("638c6f8103c3868de3eef4e1")})
+> db.student.find({name:{$regex:"[a-z]{1}[a]+"}})
+> db.student.find({name:{$regex:"[p-r]{1}[a]+"}})
+[p-r]{1}[a]+ => 
+1st index => p to r
+other indexes from 1 to many must have a character.
+
+How to use AND and OR operator
+*************************************
+And operator : when we want merge two or more condition, satisfy
+1condition + 2nd condition (Both Condition true)
+
+Or Operator : when we want use optional conditions.
+
+1. by-default And Query:-
+
+db.collection.find({marks:80})
+{"name" : "ram", "roll" : 1006, "class" : "11", "marks" : 90 }
+Syntax :-
+db.student.find({key:value,key:value,key:value,.....n})
+
+Using Between Operator:-
+**************************
+SQL : select * from student where marks Between 50 AND 90;
+B/w depend => AND Operator.
+
+mongodb:-
+> db.student.find({marks:{$gte:50},marks:{$lte:90}})
+
+And Query:-
+**************
+select * from student where name='ram' and marks='10'
+select * from student where name='ram' => multiple ram
+select * from student where marks='10' => mulitple 10 marks
+And Query => Narrow Conditon (Range minimum) => unique record
+search => probabality high.
+Or Query => broad or wide condition (Range more) => unique record 
+search => probabality minimum.
+
+Syntax :-
+************
+db.student.find({$and:[{name:"ram",{marks:10}}]})
+Syntax of Or
+**************
+db.student.find({$or:[{name:"ram"},{marks:10}]})
+select * from student where name='ram' and marks='10'
+$and => keyword => key 
+[
+{name:"ram"},
+{marks:10}
+]
+
+{$and : [
+{name:"ram"},
+{marks:10}
+]}
+
+> db.student.find({$and:[{name:"ravi"},{marks:10}]})
+
+select * from student where name='ram' or marks='10'
+
+{$or :[
+{name :"ram"},
+{marks:10}
+]}
+db.student.find({$or:[{name:"ram"},{marks:10}]})
+syntax:-
+************
+db.collection.find({$and yato $or:[{key1:value1},{key2:value2},{key3:value3},....n]})
+
+Query for log with email or mobile and password in login table.
+Ans :-
+db.login.find({$and:[
+	{$or:[
+			{email:""},{mobile:""}
+		]
+	},
+	{pass:""}
+   ]})
+
+How to update the record:-
+***************************
+update here is of two type
+1. single update 
+2. Bulk update (multiple update)
+
+update => 
+1. first select
+2. then update
+same thing with delete Query.
+
+Eg :- select * from student where id=1001
+Replace select * => Delete 
+Delete from student where id=1001;
+
+concept :- if there are n of record 
+first n of records will be found by update.
+n of matching => by default => top most 1 record will be updated 
+but you want all records to be updated you need to set multi = true in Object form
+{multi:true} as second Argument.
+
+finding the Record :-
+> db.student.find({class:"9th"})
+Record => 4
+> db.student.find({class:"9th"}).count()
+4
+single update :-
+> db.student.update({class:"9th"},{$set:{marks:0}})
+n of matching Record : 4
+update : 1
+
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+n of  matching Record => 4
+updated => 3 because 1 is already updated.
+
+multiple Record Update (Bulk Record Update)
+************************************************
+> db.student.update({class:"9th"},{$set:{marks:0}},{multi:true})
+WriteResult({ "nMatched" : 4, "nUpserted" : 0, "nModified" : 3 })
+
+
+Note :: for update we need, $set keyword 
+Syntax :-
+**********************************************************
+db.collection.find({condition},{$set:{key:value,key:value,...n}},{multi:true or false})
+
+single update
+***************
+db.collection.find({condition},{$set:{key:value,key:value,...n}},{multi:false})
+or
+db.collection.find({condition},{$set:{key:value,key:value,...n}})
+
+delete Query in mongodb:-
+***********************************
+1. first find()
+2. delete the record
+
+delete type:-
+1. single delete
+2. multiple delete
+
+delete method : remove() by default will delete all matching record
+but you want to delete only single record then you have pass true argument
+in remove method
+
+db.collection.find({condition})
+db.collection.remove({condition},true) => single delete
+
+db.collection.remove({condition}) => all matching record will be deleted.
+
+Question:-
+Difference update() and remove()
+***********************************
+
+
+Working with upsert()
+************************
+
+update+insert => upsert()
+db.collection.find() => update -> single update will happens..
+out of n records, top most 1 record will be updated..
+no matching record is found ,then record will be inserted..
+
+If(record_exist() == true) {
+       then update.
+} else {
+      then insert the Record.
+}
+
+for upsert we have no special method, rather we would be using update()
+for upsert()
+
+write the update query as it is ,just pass {upsert:true} instead of 
+{multi :true}
+
+In case of inserted record :- 
+******************************
+                          Total number = $set columns + _id + condition column
+
+        {"name":"ayushi","roll":1005,"class":12th}
+
+WHAT ARE INDEXES :-
+********************
+
+How to create the indexes in mongodb
+************************************
+Indexes are used or created over the perticular column or key to extract the data or 
+performing the searching very fast.
+Note :: Indexes applied on column not on records..
+1 => on -> index will be created for , a key 
+0 => off -> index will not be created for , a key 
+
+During Indexes, the data is cached in local
+
+In local db or for less number of records creating index will not effect the 
+performance..
+But definetly if you have cloud server where internet connection and large amount data 
+like 1-lakh record at time is the constraint(Challenge).
+in that case you can use the concept of indexes.
+
+How Indexes works:-
+*****************
+They organise the groups into different blocks of records called as pages internally in 
+db catalogue and when ever we want to fetch the records instead of searching it from top 
+to Bottom Line by line it will direclty jump into that page..
+Indexes are similar to Book Indexes
+
+Index
+*******
+Unit 1 ----------------> Page 1 to 5 -----> Group of pages
+Unit 2 ----------------> Page 10 to 15 -----> Group of pages
+Unit 3 ----------------> Page 20 to 25  -----> Group of pages
+Unit 4 ----------------> Page 100 to 105 -----> Group of pages
+
+Older Version of Mongo:-
+****************************
+db.collection.ensureIndex({column_name:1})
+
+1 :create Index
+db.collection.ensureIndex() this is replace by createIndex
+db.emp.createIndex({emp_id:1})
+ 
+ How to see list of indexes :-
+ ******************************
+ >db.student.getIndexes() 
+ Note::-range not possible all the ranges is internally maintained, by mongodb..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+
+	 
+	 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+			
+			
+			
+			
+					
